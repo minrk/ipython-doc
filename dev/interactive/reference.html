@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>IPython reference &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>IPython reference &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="Using IPython for interactive work" href="index.html" />
     <link rel="next" title="IPython as a system shell" href="shell.html" />
     <link rel="prev" title="IPython Tips &amp; Tricks" href="tips.html" /> 
@@ -280,7 +280,7 @@ use it:</p>
 <span id="defining-magics"></span><h4>Defining your own magics<a class="headerlink" href="#defining-your-own-magics" title="Permalink to this headline">¶</a></h4>
 <p>There are two main ways to define your own magic functions: from standalone
 functions and by inheriting from a base class provided by IPython:
-<a class="reference internal" href="../api/generated/IPython.core.magic.html#IPython.core.magic.Magics" title="IPython.core.magic.Magics"><tt class="xref py py-class docutils literal"><span class="pre">IPython.core.magic.Magics</span></tt></a>.  Below we show code you can place in a file
+<tt class="xref py py-class docutils literal"><span class="pre">IPython.core.magic.Magics</span></tt>.  Below we show code you can place in a file
 that you load from your configuration, such as any file in the <tt class="docutils literal"><span class="pre">startup</span></tt>
 subdirectory of your default IPython profile.</p>
 <p>First, let us see the simplest case.  The following shows how to create a line
@@ -313,7 +313,7 @@ magic, a cell one and one that works in both modes, using just plain functions:<
 </pre></div>
 </div>
 <p>You can also create magics of all three kinds by inheriting from the
-<a class="reference internal" href="../api/generated/IPython.core.magic.html#IPython.core.magic.Magics" title="IPython.core.magic.Magics"><tt class="xref py py-class docutils literal"><span class="pre">IPython.core.magic.Magics</span></tt></a> class.  This lets you create magics that can
+<tt class="xref py py-class docutils literal"><span class="pre">IPython.core.magic.Magics</span></tt> class.  This lets you create magics that can
 potentially hold state in between calls, and that have full access to the main
 IPython object:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># This code can be put in any Python module, it does not require IPython</span>
@@ -400,7 +400,7 @@ functions at any time and their docstrings. You can also type
 <tt class="docutils literal"><span class="pre">%magic_function_name?</span></tt> (see <a class="reference internal" href="#dynamic-object-info"><em>below</em></a> for
 information on the &#8216;?&#8217; system) to get information about any particular magic
 function you are interested in.</p>
-<p>The API documentation for the <a class="reference internal" href="../api/generated/IPython.core.magic.html#module-IPython.core.magic" title="IPython.core.magic"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.core.magic</span></tt></a> module contains the full
+<p>The API documentation for the <tt class="xref py py-mod docutils literal"><span class="pre">IPython.core.magic</span></tt> module contains the full
 docstrings of all currently available magic commands.</p>
 </div>
 </div>
@@ -633,7 +633,7 @@ ipython aliases. See its docstring for further details.</p>
 </div>
 <div class="section" id="recursive-reload">
 <span id="dreload"></span><h3>Recursive reload<a class="headerlink" href="#recursive-reload" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="../api/generated/IPython.lib.deepreload.html#module-IPython.lib.deepreload" title="IPython.lib.deepreload"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.deepreload</span></tt></a> module allows you to recursively reload a
+<p>The <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.deepreload</span></tt> module allows you to recursively reload a
 module: changes made to any of its dependencies will be reloaded without
 having to exit. To start using it, do:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">IPython.lib.deepreload</span> <span class="kn">import</span> <span class="nb">reload</span> <span class="k">as</span> <span class="n">dreload</span>
@@ -1134,7 +1134,7 @@ Out[2]: 9
 <div class="section" id="gui-event-loop-support">
 <span id="gui-support"></span><h2>GUI event loop support<a class="headerlink" href="#gui-event-loop-support" title="Permalink to this headline">¶</a></h2>
 <div class="versionadded">
-<p><span class="versionmodified">New in version 0.11: </span>The <tt class="docutils literal"><span class="pre">%gui</span></tt> magic and <a class="reference internal" href="../api/generated/IPython.lib.inputhook.html#module-IPython.lib.inputhook" title="IPython.lib.inputhook"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt></a>.</p>
+<p><span class="versionmodified">New in version 0.11: </span>The <tt class="docutils literal"><span class="pre">%gui</span></tt> magic and <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt>.</p>
 </div>
 <p>IPython has excellent support for working interactively with Graphical User
 Interface (GUI) toolkits, such as wxPython, PyQt4/PySide, PyGTK and Tk. This is
@@ -1145,7 +1145,7 @@ advantages of this are:</p>
 <li>GUIs can be enabled and disabled dynamically at runtime.</li>
 <li>The active GUI can be switched dynamically at runtime.</li>
 <li>In some cases, multiple GUIs can run simultaneously with no problems.</li>
-<li>There is a developer API in <a class="reference internal" href="../api/generated/IPython.lib.inputhook.html#module-IPython.lib.inputhook" title="IPython.lib.inputhook"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt></a> for customizing
+<li>There is a developer API in <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt> for customizing
 all of these things.</li>
 </ul>
 <p>For users, enabling GUI event loop integration is simple.  You simple use the
@@ -1169,7 +1169,7 @@ flag:</p>
 mode) see <a class="reference internal" href="#matplotlib-support"><em>this section</em></a>.</p>
 <p>For developers that want to use IPython&#8217;s GUI event loop integration in the
 form of a library, these capabilities are exposed in library form in the
-<a class="reference internal" href="../api/generated/IPython.lib.inputhook.html#module-IPython.lib.inputhook" title="IPython.lib.inputhook"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt></a> and <a class="reference internal" href="../api/generated/IPython.lib.guisupport.html#module-IPython.lib.guisupport" title="IPython.lib.guisupport"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.guisupport</span></tt></a> modules.
+<tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt> and <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.guisupport</span></tt> modules.
 Interested developers should see the module docstrings for more information,
 but there are a few points that should be mentioned here.</p>
 <p>First, the <tt class="docutils literal"><span class="pre">PyOSInputHook</span></tt> approach only works in command line settings
@@ -1315,8 +1315,8 @@ of the demo:</p>
 </div>
 <p>Demo objects can be
 restarted, you can move forward or back skipping blocks, re-execute the
-last block, etc. See the <a class="reference internal" href="../api/generated/IPython.lib.demo.html#module-IPython.lib.demo" title="IPython.lib.demo"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.demo</span></tt></a> module and the
-<a class="reference internal" href="../api/generated/IPython.lib.demo.html#IPython.lib.demo.Demo" title="IPython.lib.demo.Demo"><tt class="xref py py-class docutils literal"><span class="pre">Demo</span></tt></a> class for details.</p>
+last block, etc. See the <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.demo</span></tt> module and the
+<tt class="xref py py-class docutils literal"><span class="pre">Demo</span></tt> class for details.</p>
 <p>Limitations: These demos are limited to
 fairly simple uses. In particular, you cannot break up sections within
 indented code (loops, if statements, function definitions, etc.)
@@ -1358,7 +1358,7 @@ instance at an arbitrary point in a program, you can use IPython&#8217;s
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

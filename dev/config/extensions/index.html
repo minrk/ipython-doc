@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>IPython extensions &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>IPython extensions &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../../index.html" />
     <link rel="up" title="Configuration and customization" href="../index.html" />
     <link rel="next" title="autoreload" href="autoreload.html" />
     <link rel="prev" title="Specific config details" href="../details.html" /> 
@@ -150,15 +150,15 @@ def unload_ipython_extension(ipython):
 </pre></div>
 </div>
 <p>This <tt class="xref py py-func docutils literal"><span class="pre">load_ipython_extension()</span></tt> function is called after your extension is
-imported, and the currently active <a class="reference internal" href="../../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell" title="IPython.core.interactiveshell.InteractiveShell"><tt class="xref py py-class docutils literal"><span class="pre">InteractiveShell</span></tt></a>
+imported, and the currently active <tt class="xref py py-class docutils literal"><span class="pre">InteractiveShell</span></tt>
 instance is passed as the only argument. You can do anything you want with
 IPython at that point.</p>
 <p><tt class="xref py py-func docutils literal"><span class="pre">load_ipython_extension()</span></tt> will be called again if you load or reload
 the extension again. It is up to the extension author to add code to manage
 that.</p>
-<p>Useful <tt class="xref py py-class docutils literal"><span class="pre">InteractiveShell</span></tt> methods include <a class="reference internal" href="../../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell.register_magic_function" title="IPython.core.interactiveshell.InteractiveShell.register_magic_function"><tt class="xref py py-meth docutils literal"><span class="pre">register_magic_function()</span></tt></a>,
-<a class="reference internal" href="../../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell.push" title="IPython.core.interactiveshell.InteractiveShell.push"><tt class="xref py py-meth docutils literal"><span class="pre">push()</span></tt></a> (to add variables to the user namespace) and
-<a class="reference internal" href="../../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell.drop_by_id" title="IPython.core.interactiveshell.InteractiveShell.drop_by_id"><tt class="xref py py-meth docutils literal"><span class="pre">drop_by_id()</span></tt></a> (to remove variables on unloading).</p>
+<p>Useful <tt class="xref py py-class docutils literal"><span class="pre">InteractiveShell</span></tt> methods include <tt class="xref py py-meth docutils literal"><span class="pre">register_magic_function()</span></tt>,
+<tt class="xref py py-meth docutils literal"><span class="pre">push()</span></tt> (to add variables to the user namespace) and
+<tt class="xref py py-meth docutils literal"><span class="pre">drop_by_id()</span></tt> (to remove variables on unloading).</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last"><a class="reference internal" href="../../interactive/reference.html#defining-magics"><em>Defining your own magics</em></a></p>
@@ -216,7 +216,7 @@ index</a>.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

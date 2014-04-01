@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Details of Parallel Computing with IPython &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>Details of Parallel Computing with IPython &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="Using IPython for parallel computing" href="index.html" />
     <link rel="next" title="Transitioning from IPython.kernel to IPython.parallel" href="parallel_transition.html" />
     <link rel="prev" title="DAG Dependencies" href="dag_dependencies.html" /> 
@@ -285,7 +285,7 @@ Client method, called <cite>apply</cite>.</p>
 <div class="section" id="apply">
 <h3>Apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h3>
 <p>The principal method of remote execution is <tt class="xref py py-meth docutils literal"><span class="pre">apply()</span></tt>, of
-<a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.View" title="IPython.parallel.client.view.View"><tt class="xref py py-class docutils literal"><span class="pre">View</span></tt></a> objects. The Client provides the full execution and
+<tt class="xref py py-class docutils literal"><span class="pre">View</span></tt> objects. The Client provides the full execution and
 communication API for engines via its low-level <tt class="xref py py-meth docutils literal"><span class="pre">send_apply_message()</span></tt> method, which is used
 by all higher level methods of its Views.</p>
 <dl class="docutils">
@@ -368,7 +368,7 @@ low-level interface to the Hub and Engines. Most real usage will involve creatin
 <tt class="xref py py-class docutils literal"><span class="pre">View</span></tt> objects for working with engines in various ways.</p>
 <div class="section" id="directview">
 <h3>DirectView<a class="headerlink" href="#directview" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.DirectView" title="IPython.parallel.client.view.DirectView"><tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt></a> is the class for the IPython <a class="reference internal" href="parallel_multiengine.html#parallel-multiengine"><em>Multiplexing Interface</em></a>.</p>
+<p>The <tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt> is the class for the IPython <a class="reference internal" href="parallel_multiengine.html#parallel-multiengine"><em>Multiplexing Interface</em></a>.</p>
 <div class="section" id="creating-a-directview">
 <h4>Creating a DirectView<a class="headerlink" href="#creating-a-directview" title="Permalink to this headline">¶</a></h4>
 <p>DirectViews can be created in two ways, by index access to a client, or by a client&#8217;s
@@ -463,8 +463,8 @@ between engines, MPI should be used:</p>
 </div>
 <div class="section" id="push-and-pull">
 <h3>Push and pull<a class="headerlink" href="#push-and-pull" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.DirectView.push" title="IPython.parallel.client.view.DirectView.push"><tt class="xref py py-meth docutils literal"><span class="pre">push()</span></tt></a></p>
-<p><a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.DirectView.pull" title="IPython.parallel.client.view.DirectView.pull"><tt class="xref py py-meth docutils literal"><span class="pre">pull()</span></tt></a></p>
+<p><tt class="xref py py-meth docutils literal"><span class="pre">push()</span></tt></p>
+<p><tt class="xref py py-meth docutils literal"><span class="pre">pull()</span></tt></p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">TODO: write this section</p>
@@ -472,7 +472,7 @@ between engines, MPI should be used:</p>
 </div>
 <div class="section" id="loadbalancedview">
 <h3>LoadBalancedView<a class="headerlink" href="#loadbalancedview" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.LoadBalancedView" title="IPython.parallel.client.view.LoadBalancedView"><tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt></a> is the class for load-balanced execution via the task scheduler.
+<p>The <tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt> is the class for load-balanced execution via the task scheduler.
 These views always run tasks on exactly one engine, but let the scheduler determine where that
 should be, allowing load-balancing of tasks. The LoadBalancedView does allow you to specify
 restrictions on where and when tasks can execute, for more complicated load-balanced workflows.</p>
@@ -480,7 +480,7 @@ restrictions on where and when tasks can execute, for more complicated load-bala
 </div>
 <div class="section" id="data-movement">
 <h2>Data Movement<a class="headerlink" href="#data-movement" title="Permalink to this headline">¶</a></h2>
-<p>Since the <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.LoadBalancedView" title="IPython.parallel.client.view.LoadBalancedView"><tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt></a> does not know where execution will take place, explicit
+<p>Since the <tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt> does not know where execution will take place, explicit
 data movement methods like push/pull and scatter/gather do not make sense, and are not provided.</p>
 </div>
 <div class="section" id="results">
@@ -705,8 +705,8 @@ and <cite>bound</cite> keyword arguments, just like <tt class="xref py py-meth d
 </div>
 <p><tt class="xref py py-func docutils literal"><span class="pre">&#64;parallel()</span></tt></p>
 <p><tt class="xref py py-func docutils literal"><span class="pre">&#64;remote()</span></tt></p>
-<p><a class="reference internal" href="../api/generated/IPython.parallel.client.remotefunction.html#IPython.parallel.client.remotefunction.RemoteFunction" title="IPython.parallel.client.remotefunction.RemoteFunction"><tt class="xref py py-class docutils literal"><span class="pre">RemoteFunction</span></tt></a></p>
-<p><a class="reference internal" href="../api/generated/IPython.parallel.client.remotefunction.html#IPython.parallel.client.remotefunction.ParallelFunction" title="IPython.parallel.client.remotefunction.ParallelFunction"><tt class="xref py py-class docutils literal"><span class="pre">ParallelFunction</span></tt></a></p>
+<p><tt class="xref py py-class docutils literal"><span class="pre">RemoteFunction</span></tt></p>
+<p><tt class="xref py py-class docutils literal"><span class="pre">ParallelFunction</span></tt></p>
 </div>
 <div class="section" id="dependencies">
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
@@ -716,7 +716,7 @@ and <cite>bound</cite> keyword arguments, just like <tt class="xref py py-meth d
 </div>
 <p><tt class="xref py py-func docutils literal"><span class="pre">&#64;depend()</span></tt></p>
 <p><tt class="xref py py-func docutils literal"><span class="pre">&#64;require()</span></tt></p>
-<p><a class="reference internal" href="../api/generated/IPython.parallel.controller.dependency.html#IPython.parallel.controller.dependency.Dependency" title="IPython.parallel.controller.dependency.Dependency"><tt class="xref py py-class docutils literal"><span class="pre">Dependency</span></tt></a></p>
+<p><tt class="xref py py-class docutils literal"><span class="pre">Dependency</span></tt></p>
 </div>
 </div>
 
@@ -750,7 +750,7 @@ and <cite>bound</cite> keyword arguments, just like <tt class="xref py py-meth d
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

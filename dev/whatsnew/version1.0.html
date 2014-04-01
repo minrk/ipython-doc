@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>1.0 Series &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>1.0 Series &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,10 +23,10 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="What’s new in IPython" href="index.html" />
     <link rel="next" title="Issues closed in the 1.0 development cycle" href="github-stats-1.0.html" />
-    <link rel="prev" title="Development version" href="development.html" /> 
+    <link rel="prev" title="Issues closed in the 2.0 development cycle" href="github-stats-2.0.html" /> 
   </head>
   <body>
 
@@ -47,7 +47,7 @@
           <a href="github-stats-1.0.html" title="Issues closed in the 1.0 development cycle"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="development.html" title="Development version"
+          <a href="github-stats-2.0.html" title="Issues closed in the 2.0 development cycle"
              accesskey="P">previous</a> |</li>
         <li><a href="http://ipython.org">home</a>|&nbsp;</li>
         <li><a href="../search.html">search</a>|&nbsp;</li>
@@ -88,8 +88,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="development.html"
-                        title="previous chapter">Development version</a></p>
+  <p class="topless"><a href="github-stats-2.0.html"
+                        title="previous chapter">Issues closed in the 2.0 development cycle</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="github-stats-1.0.html"
                         title="next chapter">Issues closed in the 1.0 development cycle</a></p>
@@ -235,21 +235,21 @@ can also pass a backend explicitly (<tt class="docutils literal"><span class="pr
 <li>Calling <tt class="xref py py-meth docutils literal"><span class="pre">InteractiveShell.prefilter()</span></tt> will no longer perform static
 transformations - the processing of escaped commands such as <tt class="docutils literal"><span class="pre">%magic</span></tt> and
 <tt class="docutils literal"><span class="pre">!system</span></tt>, and stripping input prompts from code blocks. This functionality
-was duplicated in <a class="reference internal" href="../api/generated/IPython.core.inputsplitter.html#module-IPython.core.inputsplitter" title="IPython.core.inputsplitter"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.core.inputsplitter</span></tt></a>, and the latter version
+was duplicated in <tt class="xref py py-mod docutils literal"><span class="pre">IPython.core.inputsplitter</span></tt>, and the latter version
 was already what IPython relied on. A new API to transform input will be ready
 before release.</li>
-<li>Functions from <a class="reference internal" href="../api/generated/IPython.lib.inputhook.html#module-IPython.lib.inputhook" title="IPython.lib.inputhook"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt></a> to control integration with GUI
+<li>Functions from <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt> to control integration with GUI
 event loops are no longer exposed in the top level of <tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib</span></tt>.
 Code calling these should make sure to import them from
-<a class="reference internal" href="../api/generated/IPython.lib.inputhook.html#module-IPython.lib.inputhook" title="IPython.lib.inputhook"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt></a>.</li>
+<tt class="xref py py-mod docutils literal"><span class="pre">IPython.lib.inputhook</span></tt>.</li>
 <li>For all kernel managers, the <tt class="docutils literal"><span class="pre">sub_channel</span></tt> attribute has been renamed to
 <tt class="docutils literal"><span class="pre">iopub_channel</span></tt>.</li>
 <li>Users on Python versions before 2.6.6, 2.7.1 or 3.2 will now need to call
-<a class="reference internal" href="../api/generated/IPython.utils.doctestreload.html#IPython.utils.doctestreload.doctest_reload" title="IPython.utils.doctestreload.doctest_reload"><tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.doctestreload.doctest_reload()</span></tt></a> to make doctests run
+<tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.doctestreload.doctest_reload()</span></tt> to make doctests run
 correctly inside IPython. Python releases since those versions are unaffected.
 For details, see <a class="reference external" href="https://github.com/ipython/ipython/pull/3068/">PR #3068</a> and <a class="reference external" href="http://bugs.python.org/issue8048">Python issue 8048</a>.</li>
 <li>The <tt class="docutils literal"><span class="pre">InteractiveShell.cache_main_mod()</span></tt> method has been removed, and
-<a class="reference internal" href="../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell.new_main_mod" title="IPython.core.interactiveshell.InteractiveShell.new_main_mod"><tt class="xref py py-meth docutils literal"><span class="pre">new_main_mod()</span></tt></a> has a
+<tt class="xref py py-meth docutils literal"><span class="pre">new_main_mod()</span></tt> has a
 different signature, expecting a filename where earlier versions expected
 a namespace. See <a class="reference external" href="https://github.com/ipython/ipython/pull/3555/">PR #3555</a> for details.</li>
 <li>The short-lived plugin system has been removed. Extensions are the way to go.</li>
@@ -355,7 +355,7 @@ but publishes raw (usually pickled) data, rather than representations.</li>
 </ul>
 <div class="section" id="ipep-13">
 <h4>IPEP 13<a class="headerlink" href="#ipep-13" title="Permalink to this headline">¶</a></h4>
-<p>The KernelManager has been split into a <a class="reference internal" href="../api/generated/IPython.kernel.manager.html#IPython.kernel.manager.KernelManager" title="IPython.kernel.manager.KernelManager"><tt class="xref py py-class docutils literal"><span class="pre">KernelManager</span></tt></a> and a <a class="reference internal" href="../api/generated/IPython.kernel.client.html#IPython.kernel.client.KernelClient" title="IPython.kernel.client.KernelClient"><tt class="xref py py-class docutils literal"><span class="pre">KernelClient</span></tt></a>.
+<p>The KernelManager has been split into a <tt class="xref py py-class docutils literal"><span class="pre">KernelManager</span></tt> and a <tt class="xref py py-class docutils literal"><span class="pre">KernelClient</span></tt>.
 The Manager owns a kernel and starts / signals / restarts it. There is always zero or one
 KernelManager per Kernel.  Clients communicate with Kernels via zmq channels,
 and there can be zero-to-many Clients connected to a Kernel at any given time.</p>
@@ -422,7 +422,7 @@ and <tt class="docutils literal"><span class="pre">IPythonWidget.height</span></
           <a href="github-stats-1.0.html" title="Issues closed in the 1.0 development cycle"
              >next</a> |</li>
         <li class="right" >
-          <a href="development.html" title="Development version"
+          <a href="github-stats-2.0.html" title="Issues closed in the 2.0 development cycle"
              >previous</a> |</li>
         <li><a href="http://ipython.org">home</a>|&nbsp;</li>
         <li><a href="../search.html">search</a>|&nbsp;</li>
@@ -433,7 +433,7 @@ and <tt class="docutils literal"><span class="pre">IPythonWidget.height</span></
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

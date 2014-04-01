@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Custom input transformation &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>Custom input transformation &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="Configuration and customization" href="index.html" />
     <link rel="next" title="Registering callbacks" href="callbacks.html" />
     <link rel="prev" title="Integrating your objects with IPython" href="integrating.html" /> 
@@ -123,10 +123,10 @@ interactive interface. Using them carelessly can easily break IPython!</p>
 <h2>String based transformations<a class="headerlink" href="#string-based-transformations" title="Permalink to this headline">¶</a></h2>
 <p>When the user enters a line of code, it is first processed as a string. By the
 end of this stage, it must be valid Python syntax.</p>
-<p>These transformers all subclass <a class="reference internal" href="../api/generated/IPython.core.inputtransformer.html#IPython.core.inputtransformer.InputTransformer" title="IPython.core.inputtransformer.InputTransformer"><tt class="xref py py-class docutils literal"><span class="pre">IPython.core.inputtransformer.InputTransformer</span></tt></a>,
-and are used by <a class="reference internal" href="../api/generated/IPython.core.inputsplitter.html#IPython.core.inputsplitter.IPythonInputSplitter" title="IPython.core.inputsplitter.IPythonInputSplitter"><tt class="xref py py-class docutils literal"><span class="pre">IPython.core.inputsplitter.IPythonInputSplitter</span></tt></a>.</p>
+<p>These transformers all subclass <tt class="xref py py-class docutils literal"><span class="pre">IPython.core.inputtransformer.InputTransformer</span></tt>,
+and are used by <tt class="xref py py-class docutils literal"><span class="pre">IPython.core.inputsplitter.IPythonInputSplitter</span></tt>.</p>
 <p>These transformers act in three groups, stored separately as lists of instances
-in attributes of <a class="reference internal" href="../api/generated/IPython.core.inputsplitter.html#IPython.core.inputsplitter.IPythonInputSplitter" title="IPython.core.inputsplitter.IPythonInputSplitter"><tt class="xref py py-class docutils literal"><span class="pre">IPythonInputSplitter</span></tt></a>:</p>
+in attributes of <tt class="xref py py-class docutils literal"><span class="pre">IPythonInputSplitter</span></tt>:</p>
 <ul class="simple">
 <li><tt class="docutils literal"><span class="pre">physical_line_transforms</span></tt> act on the lines as the user enters them. For
 example, these strip Python prompts from examples pasted in.</li>
@@ -140,7 +140,7 @@ passed to these, but note that function and class <em>definitions</em> are still
 series of separate statements. IPython does not use any of these by default.</li>
 </ul>
 <p>An InteractiveShell instance actually has two
-<a class="reference internal" href="../api/generated/IPython.core.inputsplitter.html#IPython.core.inputsplitter.IPythonInputSplitter" title="IPython.core.inputsplitter.IPythonInputSplitter"><tt class="xref py py-class docutils literal"><span class="pre">IPythonInputSplitter</span></tt></a> instances, as the
+<tt class="xref py py-class docutils literal"><span class="pre">IPythonInputSplitter</span></tt> instances, as the
 attributes <tt class="xref py py-attr docutils literal"><span class="pre">input_splitter</span></tt>,
 to tell when a block of input is complete, and
 <tt class="xref py py-attr docutils literal"><span class="pre">input_transformer_manager</span></tt>,
@@ -169,7 +169,7 @@ which takes a line and returns a line, and decorate it with
 </pre></div>
 </div>
 <p>The decorator returns a factory function which will produce instances of
-<a class="reference internal" href="../api/generated/IPython.core.inputtransformer.html#IPython.core.inputtransformer.StatelessInputTransformer" title="IPython.core.inputtransformer.StatelessInputTransformer"><tt class="xref py py-class docutils literal"><span class="pre">StatelessInputTransformer</span></tt></a> using your
+<tt class="xref py py-class docutils literal"><span class="pre">StatelessInputTransformer</span></tt> using your
 function.</p>
 </div>
 <div class="section" id="coroutine-transformers">
@@ -269,7 +269,7 @@ mathematical frameworks that want to handle e.g. <tt class="docutils literal"><s
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview of the IPython configuration system &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>Overview of the IPython configuration system &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="IPython developer’s guide" href="index.html" />
     <link rel="next" title="IPython GUI Support Notes" href="inputhook_app.html" />
     <link rel="prev" title="Writing code for Python 2 and 3" href="pycompat.html" /> 
@@ -140,14 +140,14 @@ significant differences from the latest stable release (1.2.1).</p>
 <p>There are a number of abstractions that the IPython configuration system uses.
 Each of these abstractions is represented by a Python class.</p>
 <dl class="docutils">
-<dt>Configuration object: <a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a></dt>
+<dt>Configuration object: <tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></dt>
 <dd>A configuration object is a simple dictionary-like class that holds
 configuration attributes and sub-configuration objects. These classes
 support dotted attribute style access (<tt class="docutils literal"><span class="pre">cfg.Foo.bar</span></tt>) in addition to the
 regular dictionary style access (<tt class="docutils literal"><span class="pre">cfg['Foo']['bar']</span></tt>).
 The Config object is a wrapper around a simple dictionary with some convenience methods,
 such as merging and automatic section creation.</dd>
-<dt>Application: <a class="reference internal" href="../api/generated/IPython.config.application.html#IPython.config.application.Application" title="IPython.config.application.Application"><tt class="xref py py-class docutils literal"><span class="pre">Application</span></tt></a></dt>
+<dt>Application: <tt class="xref py py-class docutils literal"><span class="pre">Application</span></tt></dt>
 <dd><p class="first">An application is a process that does a specific job. The most obvious
 application is the <strong class="command">ipython</strong> command line program. Each
 application reads <em>one or more</em> configuration files and a single set of
@@ -160,25 +160,25 @@ configuration object.</p>
 <p class="last">Applications always have a <cite>log</cite> attribute that is a configured Logger.
 This allows centralized logging configuration per-application.</p>
 </dd>
-<dt>Configurable: <a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.Configurable" title="IPython.config.configurable.Configurable"><tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt></a></dt>
+<dt>Configurable: <tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt></dt>
 <dd><p class="first">A configurable is a regular Python class that serves as a base class for
 all main classes in an application. The
-<a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.Configurable" title="IPython.config.configurable.Configurable"><tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt></a> base class is
+<tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt> base class is
 lightweight and only does one things.</p>
-<p>This <a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.Configurable" title="IPython.config.configurable.Configurable"><tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt></a> is a subclass
-of <a class="reference internal" href="../api/generated/IPython.utils.traitlets.html#IPython.utils.traitlets.HasTraits" title="IPython.utils.traitlets.HasTraits"><tt class="xref py py-class docutils literal"><span class="pre">HasTraits</span></tt></a> that knows how to configure
+<p>This <tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt> is a subclass
+of <tt class="xref py py-class docutils literal"><span class="pre">HasTraits</span></tt> that knows how to configure
 itself. Class level traits with the metadata <tt class="docutils literal"><span class="pre">config=True</span></tt> become
 values that can be configured from the command line and configuration
 files.</p>
-<p class="last">Developers create <a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.Configurable" title="IPython.config.configurable.Configurable"><tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt></a>
+<p class="last">Developers create <tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt>
 subclasses that implement all of the logic in the application. Each of
 these subclasses has its own configuration information that controls how
 instances are created.</p>
 </dd>
-<dt>Singletons: <a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.SingletonConfigurable" title="IPython.config.configurable.SingletonConfigurable"><tt class="xref py py-class docutils literal"><span class="pre">SingletonConfigurable</span></tt></a></dt>
+<dt>Singletons: <tt class="xref py py-class docutils literal"><span class="pre">SingletonConfigurable</span></tt></dt>
 <dd>Any object for which there is a single canonical instance. These are
 just like Configurables, except they have a class method
-<a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.SingletonConfigurable.instance" title="IPython.config.configurable.SingletonConfigurable.instance"><tt class="xref py py-meth docutils literal"><span class="pre">instance()</span></tt></a>,
+<tt class="xref py py-meth docutils literal"><span class="pre">instance()</span></tt>,
 that returns the current active instance (or creates one if it
 does not exist).  Examples of singletons include
 <tt class="xref py py-class docutils literal"><span class="pre">InteractiveShell</span></tt>.  This lets
@@ -217,7 +217,7 @@ with JSON configuration having higher priority.</p>
 <div class="section" id="python-configuration-files">
 <h3>Python configuration Files<a class="headerlink" href="#python-configuration-files" title="Permalink to this headline">¶</a></h3>
 <p>A Python configuration file is a pure Python file that populates a configuration object.
-This configuration object is a <a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a> instance.
+This configuration object is a <tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt> instance.
 While in a configuration file, to get a reference to this object, simply call the <tt class="xref py py-func docutils literal"><span class="pre">get_config()</span></tt>
 function, which is available in the global namespace of the script.</p>
 <p>Here is an example of a super simple configuration file that does nothing:</p>
@@ -232,7 +232,7 @@ attributes on it.  All you have to know is:</p>
 <li>The type of each attribute.</li>
 </ul>
 <p>The answers to these questions are provided by the various
-<a class="reference internal" href="../api/generated/IPython.config.configurable.html#IPython.config.configurable.Configurable" title="IPython.config.configurable.Configurable"><tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt></a> subclasses that an
+<tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt> subclasses that an
 application uses. Let&#8217;s look at how this would work for a simple configurable
 subclass:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="c"># Sample configurable:</span>
@@ -261,15 +261,15 @@ to configure this class in a configuration file:</p>
 <p>After this configuration file is loaded, the values set in it will override
 the class defaults anytime a <tt class="xref py py-class docutils literal"><span class="pre">MyClass</span></tt> is created.  Furthermore,
 these attributes will be type checked and validated anytime they are set.
-This type checking is handled by the <a class="reference internal" href="../api/generated/IPython.utils.traitlets.html#module-IPython.utils.traitlets" title="IPython.utils.traitlets"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.utils.traitlets</span></tt></a> module,
+This type checking is handled by the <tt class="xref py py-mod docutils literal"><span class="pre">IPython.utils.traitlets</span></tt> module,
 which provides the <tt class="xref py py-class docutils literal"><span class="pre">Unicode</span></tt>, <tt class="xref py py-class docutils literal"><span class="pre">Int</span></tt> and <tt class="xref py py-class docutils literal"><span class="pre">Float</span></tt> types.
-In addition to these traitlets, the <a class="reference internal" href="../api/generated/IPython.utils.traitlets.html#module-IPython.utils.traitlets" title="IPython.utils.traitlets"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.utils.traitlets</span></tt></a> provides
+In addition to these traitlets, the <tt class="xref py py-mod docutils literal"><span class="pre">IPython.utils.traitlets</span></tt> provides
 traitlets for a number of other types.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">Underneath the hood, the <tt class="xref py py-class docutils literal"><span class="pre">Configurable</span></tt> base class is a subclass of
-<a class="reference internal" href="../api/generated/IPython.utils.traitlets.html#IPython.utils.traitlets.HasTraits" title="IPython.utils.traitlets.HasTraits"><tt class="xref py py-class docutils literal"><span class="pre">IPython.utils.traitlets.HasTraits</span></tt></a>. The
-<a class="reference internal" href="../api/generated/IPython.utils.traitlets.html#module-IPython.utils.traitlets" title="IPython.utils.traitlets"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.utils.traitlets</span></tt></a> module is a lightweight version of
+<tt class="xref py py-class docutils literal"><span class="pre">IPython.utils.traitlets.HasTraits</span></tt>. The
+<tt class="xref py py-mod docutils literal"><span class="pre">IPython.utils.traitlets</span></tt> module is a lightweight version of
 <tt class="xref py py-mod docutils literal"><span class="pre">enthought.traits</span></tt>. Our implementation is a pure Python subset
 (mostly API compatible) of <tt class="xref py py-mod docutils literal"><span class="pre">enthought.traits</span></tt> that does not have any
 of the automatic GUI generation capabilities. Our plan is to achieve 100%
@@ -287,16 +287,16 @@ configuration attributes:</p>
 want to set, <tt class="docutils literal"><span class="pre">attribute_name</span></tt> is the name of the attribute you want to set
 and <tt class="docutils literal"><span class="pre">attribute_value</span></tt> the the value you want it to have. The <tt class="docutils literal"><span class="pre">ClassName</span></tt>
 attribute of <tt class="docutils literal"><span class="pre">c</span></tt> is not the actual class, but instead is another
-<a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a> instance.</p>
+<tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt> instance.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The careful reader may wonder how the <tt class="docutils literal"><span class="pre">ClassName</span></tt> (<tt class="docutils literal"><span class="pre">MyClass</span></tt> in
 the above example) attribute of the configuration object <tt class="docutils literal"><span class="pre">c</span></tt> gets
 created. These attributes are created on the fly by the
-<a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a> instance, using a simple naming
-convention. Any attribute of a <a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a>
+<tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt> instance, using a simple naming
+convention. Any attribute of a <tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt>
 instance whose name begins with an uppercase character is assumed to be a
-sub-configuration and a new empty <a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a>
+sub-configuration and a new empty <tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt>
 instance is dynamically created for that attribute. This allows deeply
 hierarchical information created easily (<tt class="docutils literal"><span class="pre">c.Foo.Bar.value</span></tt>) on the fly.</p>
 </div>
@@ -304,7 +304,7 @@ hierarchical information created easily (<tt class="docutils literal"><span clas
 <div class="section" id="json-configuration-files">
 <h3>JSON configuration Files<a class="headerlink" href="#json-configuration-files" title="Permalink to this headline">¶</a></h3>
 <p>A JSON configuration file is simply a file that contains a
-<a class="reference internal" href="../api/generated/IPython.config.loader.html#IPython.config.loader.Config" title="IPython.config.loader.Config"><tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt></a> dictionary serialized to JSON.
+<tt class="xref py py-class docutils literal"><span class="pre">Config</span></tt> dictionary serialized to JSON.
 A JSON configuration file has the same base name as a Python configuration file,
 but with a .json extension.</p>
 <p>Configuration described in previous section could be written as follows in a
@@ -406,7 +406,7 @@ configuration, and by default, all profiles will be stored in the so called
 following algorithm:</p>
 <ul class="simple">
 <li>If the <tt class="docutils literal"><span class="pre">ipython-dir</span></tt> command line flag is given, its value is used.</li>
-<li>If not, the value returned by <a class="reference internal" href="../api/generated/IPython.utils.path.html#IPython.utils.path.get_ipython_dir" title="IPython.utils.path.get_ipython_dir"><tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.get_ipython_dir()</span></tt></a>
+<li>If not, the value returned by <tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.get_ipython_dir()</span></tt>
 is used. This function will first look at the <span class="target" id="index-0"></span><a class="reference internal" href="../config/intro.html#envvar-IPYTHONDIR"><tt class="xref std std-envvar docutils literal"><span class="pre">IPYTHONDIR</span></tt></a>
 environment variable and then default to <tt class="file docutils literal"><span class="pre">~/.ipython</span></tt>.
 Historical support for the <span class="target" id="index-1"></span><tt class="xref std std-envvar docutils literal"><span class="pre">IPYTHON_DIR</span></tt> environment variable will
@@ -436,7 +436,7 @@ overridden by the <tt class="docutils literal"><span class="pre">config_file</sp
 </div>
 <p>and you will have a default <tt class="file docutils literal"><span class="pre">ipython_config.py</span></tt> in your IPython directory
 under <tt class="file docutils literal"><span class="pre">profile_default</span></tt>. If you want the default config files for the
-<a class="reference internal" href="../api/generated/IPython.parallel.html#module-IPython.parallel" title="IPython.parallel"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt></a> applications, add <tt class="docutils literal"><span class="pre">--parallel</span></tt> to the end of the
+<tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt> applications, add <tt class="docutils literal"><span class="pre">--parallel</span></tt> to the end of the
 command-line args.</p>
 <div class="section" id="locating-these-files">
 <h3>Locating these files<a class="headerlink" href="#locating-these-files" title="Permalink to this headline">¶</a></h3>
@@ -449,8 +449,8 @@ profile with:</p>
 /home/you/.ipython/profile_foo
 </pre></div>
 </div>
-<p>These map to the utility functions: <a class="reference internal" href="../api/generated/IPython.utils.path.html#IPython.utils.path.get_ipython_dir" title="IPython.utils.path.get_ipython_dir"><tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.get_ipython_dir()</span></tt></a>
-and <a class="reference internal" href="../api/generated/IPython.utils.path.html#IPython.utils.path.locate_profile" title="IPython.utils.path.locate_profile"><tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.locate_profile()</span></tt></a> respectively.</p>
+<p>These map to the utility functions: <tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.get_ipython_dir()</span></tt>
+and <tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.locate_profile()</span></tt> respectively.</p>
 </div>
 </div>
 <div class="section" id="profiles">
@@ -487,7 +487,7 @@ connection information in small JSON files in the active profile&#8217;s securit
 directory. This directory is made private, so only you can see the files inside. If
 you need to move connection files around to other computers, this is where they will
 be. If you want your code to be able to open security files by name, we have a
-convenience function <a class="reference internal" href="../api/generated/IPython.utils.path.html#IPython.utils.path.get_security_file" title="IPython.utils.path.get_security_file"><tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.get_security_file()</span></tt></a>, which will return
+convenience function <tt class="xref py py-func docutils literal"><span class="pre">IPython.utils.path.get_security_file()</span></tt>, which will return
 the absolute path to a security file from its filename and [optionally] profile
 name.</p>
 </div>
@@ -644,7 +644,7 @@ configured when a program starts.</li>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

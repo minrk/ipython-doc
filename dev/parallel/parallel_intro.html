@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Overview and getting started &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>Overview and getting started &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="Using IPython for parallel computing" href="index.html" />
     <link rel="next" title="Starting the IPython controller and engines" href="parallel_process.html" />
     <link rel="prev" title="Using IPython for parallel computing" href="index.html" /> 
@@ -184,7 +184,7 @@ presented here.</p>
 <li>The IPython schedulers.</li>
 <li>The controller client.</li>
 </ul>
-<p>These components live in the <a class="reference internal" href="../api/generated/IPython.parallel.html#module-IPython.parallel" title="IPython.parallel"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt></a> package and are
+<p>These components live in the <tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt> package and are
 installed with IPython.  They do, however, have additional dependencies
 that must be installed.  For more information, see our
 <a class="reference internal" href="../install/index.html#install-index"><em>installation documentation</em></a>.</p>
@@ -210,8 +210,8 @@ same machine as the Hub, but can be run anywhere from local threads or on remote
 <p>The controller also provides a single point of contact for users who wish to
 utilize the engines connected to the controller. There are different ways of
 working with a controller. In IPython, all of these models are implemented via
-the <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.View.apply" title="IPython.parallel.client.view.View.apply"><tt class="xref py py-meth docutils literal"><span class="pre">View.apply()</span></tt></a> method, after
-constructing <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.View" title="IPython.parallel.client.view.View"><tt class="xref py py-class docutils literal"><span class="pre">View</span></tt></a> objects to represent subsets of engines. The two
+the <tt class="xref py py-meth docutils literal"><span class="pre">View.apply()</span></tt> method, after
+constructing <tt class="xref py py-class docutils literal"><span class="pre">View</span></tt> objects to represent subsets of engines. The two
 primary models for interacting with engines are:</p>
 <ul class="simple">
 <li>A <strong>Direct</strong> interface, where engines are addressed explicitly.</li>
@@ -408,7 +408,7 @@ controller.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

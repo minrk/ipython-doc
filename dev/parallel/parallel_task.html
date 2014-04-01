@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>The IPython task interface &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>The IPython task interface &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="Using IPython for parallel computing" href="index.html" />
     <link rel="next" title="The AsyncResult object" href="asyncresult.html" />
     <link rel="prev" title="Parallel Magic Commands" href="magics.html" /> 
@@ -162,8 +162,8 @@ our <a class="reference internal" href="parallel_intro.html#parallel-overview"><
 </div>
 <div class="section" id="creating-a-loadbalancedview-instance">
 <h2>Creating a <tt class="docutils literal"><span class="pre">LoadBalancedView</span></tt> instance<a class="headerlink" href="#creating-a-loadbalancedview-instance" title="Permalink to this headline">¶</a></h2>
-<p>The first step is to import the IPython <a class="reference internal" href="../api/generated/IPython.parallel.html#module-IPython.parallel" title="IPython.parallel"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt></a>
-module and then create a <a class="reference internal" href="../api/generated/IPython.parallel.client.client.html#IPython.parallel.client.client.Client" title="IPython.parallel.client.client.Client"><tt class="xref py py-class docutils literal"><span class="pre">Client</span></tt></a> instance, and we will also be using
+<p>The first step is to import the IPython <tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt>
+module and then create a <tt class="xref py py-class docutils literal"><span class="pre">Client</span></tt> instance, and we will also be using
 a <tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt>, here called <cite>lview</cite>:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">IPython.parallel</span> <span class="kn">import</span> <span class="n">Client</span>
 
@@ -516,10 +516,10 @@ engine until they <em>finish</em>.  This makes recovery from engine shutdown ver
 of flexibility in how tasks are defined and run. The next places to look are
 in the following classes:</p>
 <ul class="simple">
-<li><a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.LoadBalancedView" title="IPython.parallel.client.view.LoadBalancedView"><tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt></a></li>
-<li><a class="reference internal" href="../api/generated/IPython.parallel.client.asyncresult.html#IPython.parallel.client.asyncresult.AsyncResult" title="IPython.parallel.client.asyncresult.AsyncResult"><tt class="xref py py-class docutils literal"><span class="pre">AsyncResult</span></tt></a></li>
+<li><tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt></li>
+<li><tt class="xref py py-class docutils literal"><span class="pre">AsyncResult</span></tt></li>
 <li><tt class="xref py py-meth docutils literal"><span class="pre">apply()</span></tt></li>
-<li><a class="reference internal" href="../api/generated/IPython.parallel.controller.dependency.html#module-IPython.parallel.controller.dependency" title="IPython.parallel.controller.dependency"><tt class="xref py py-mod docutils literal"><span class="pre">dependency</span></tt></a></li>
+<li><tt class="xref py py-mod docutils literal"><span class="pre">dependency</span></tt></li>
 </ul>
 <p>The following is an overview of how to use these classes together:</p>
 <ol class="arabic simple">
@@ -527,7 +527,7 @@ in the following classes:</p>
 <li>Define some functions to be run as tasks</li>
 <li>Submit your tasks to using the <tt class="xref py py-meth docutils literal"><span class="pre">apply()</span></tt> method of your
 <tt class="xref py py-class docutils literal"><span class="pre">LoadBalancedView</span></tt> instance.</li>
-<li>Use <a class="reference internal" href="../api/generated/IPython.parallel.client.client.html#IPython.parallel.client.client.Client.get_result" title="IPython.parallel.client.client.Client.get_result"><tt class="xref py py-meth docutils literal"><span class="pre">Client.get_result()</span></tt></a> to get the results of the
+<li>Use <tt class="xref py py-meth docutils literal"><span class="pre">Client.get_result()</span></tt> to get the results of the
 tasks, or use the <a class="reference internal" href="parallel_details.html#AsyncResult.get" title="AsyncResult.get"><tt class="xref py py-meth docutils literal"><span class="pre">AsyncResult.get()</span></tt></a> method of the results to wait
 for and then receive the results.</li>
 </ol>
@@ -568,7 +568,7 @@ for and then receive the results.</li>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

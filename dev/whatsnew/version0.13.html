@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>0.13 Series &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>0.13 Series &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="What’s new in IPython" href="index.html" />
     <link rel="next" title="Issues closed in the 0.13 development cycle" href="github-stats-0.13.html" />
     <link rel="prev" title="Issues closed in the 1.0 development cycle" href="github-stats-1.0.html" /> 
@@ -270,12 +270,12 @@ example, embed local images in a notebook.  <a class="reference external" href="
 <p>We have completely refactored the magic system, finally moving the magic
 objects to standalone, independent objects instead of being the mixin class
 we&#8217;d had since the beginning of IPython (<a class="reference external" href="https://github.com/ipython/ipython/pull/1732/">PR #1732</a>).  Now, a separate base
-class is provided in <a class="reference internal" href="../api/generated/IPython.core.magic.html#IPython.core.magic.Magics" title="IPython.core.magic.Magics"><tt class="xref py py-class docutils literal"><span class="pre">IPython.core.magic.Magics</span></tt></a> that users can subclass
+class is provided in <tt class="xref py py-class docutils literal"><span class="pre">IPython.core.magic.Magics</span></tt> that users can subclass
 to create their own magics.  Decorators are also provided to create magics from
 simple functions without the need for object orientation.  Please see the
 <a class="reference internal" href="../interactive/reference.html#magic"><em>Magic command system</em></a> docs for further details.</p>
 <p>All builtin magics now exist in a few subclasses that group together related
-functionality, and the new <a class="reference internal" href="../api/generated/IPython.core.magics.html#module-IPython.core.magics" title="IPython.core.magics"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.core.magics</span></tt></a> package has been created
+functionality, and the new <tt class="xref py py-mod docutils literal"><span class="pre">IPython.core.magics</span></tt> package has been created
 to organize this into smaller files.</p>
 <p>This cleanup was the last major piece of deep refactoring needed from the
 original 2001 codebase.</p>
@@ -408,7 +408,7 @@ visible indication that the kernel has restarted. <a class="reference external" 
 <p>The parallel tools have been improved and fine-tuned on multiple fronts.  Now,
 the creation of an <tt class="xref py py-class docutils literal"><span class="pre">IPython.parallel.Client</span></tt> object automatically
 activates a line and cell magic function <tt class="docutils literal"><span class="pre">px</span></tt> that sends its code to all the
-engines. Further magics can be easily created with the <a class="reference internal" href="../api/generated/IPython.parallel.client.client.html#IPython.parallel.client.client.Client.activate" title="IPython.parallel.client.client.Client.activate"><tt class="xref py py-meth docutils literal"><span class="pre">Client.activate()</span></tt></a>
+engines. Further magics can be easily created with the <tt class="xref py py-meth docutils literal"><span class="pre">Client.activate()</span></tt>
 method, to conveniently execute code on any subset of engines. <a class="reference external" href="https://github.com/ipython/ipython/pull/1893/">PR #1893</a>.</p>
 <p>The <tt class="docutils literal"><span class="pre">%%px</span></tt> cell magic can also be given an optional targets argument, as well
 as a <tt class="docutils literal"><span class="pre">--out</span></tt> argument for storing its output.</p>
@@ -446,7 +446,7 @@ quite useful (<a class="reference external" href="https://github.com/ipython/ipy
 <li><tt class="docutils literal"><span class="pre">ar.wait_interactive()</span></tt>: prints progress</li>
 </ul>
 </div></blockquote>
-<p>Added <a class="reference internal" href="../api/generated/IPython.parallel.client.client.html#IPython.parallel.client.client.Client.spin_thread" title="IPython.parallel.client.client.Client.spin_thread"><tt class="xref py py-meth docutils literal"><span class="pre">Client.spin_thread()</span></tt></a> / <a class="reference internal" href="../api/generated/IPython.parallel.client.client.html#IPython.parallel.client.client.Client.stop_spin_thread" title="IPython.parallel.client.client.Client.stop_spin_thread"><tt class="xref py py-meth docutils literal"><span class="pre">stop_spin_thread()</span></tt></a> for
+<p>Added <tt class="xref py py-meth docutils literal"><span class="pre">Client.spin_thread()</span></tt> / <tt class="xref py py-meth docutils literal"><span class="pre">stop_spin_thread()</span></tt> for
 running spin in a background thread, to keep zmq queue clear.  This can be used
 to ensure that timing information is as accurate as possible (at the cost of
 having a background thread active).</p>
@@ -488,11 +488,11 @@ cluster:</p>
 </li>
 <li><p class="first">It is possible to embed not only an interactive shell with the
 <tt class="xref py py-func docutils literal"><span class="pre">IPython.embed()</span></tt> call as always, but now you can also embed a <em>kernel</em>
-with <a class="reference internal" href="../api/generated/IPython.html#IPython.embed_kernel" title="IPython.embed_kernel"><tt class="xref py py-func docutils literal"><span class="pre">IPython.embed_kernel()</span></tt></a>.  Embedding an IPython kernel in an
+with <tt class="xref py py-func docutils literal"><span class="pre">IPython.embed_kernel()</span></tt>.  Embedding an IPython kernel in an
 application is useful when you want to use <tt class="xref py py-func docutils literal"><span class="pre">IPython.embed()</span></tt> but don&#8217;t
 have a terminal attached on stdin and stdout.</p>
 </li>
-<li><p class="first">The new <a class="reference internal" href="../api/generated/IPython.parallel.html#IPython.parallel.bind_kernel" title="IPython.parallel.bind_kernel"><tt class="xref py py-func docutils literal"><span class="pre">IPython.parallel.bind_kernel()</span></tt></a> allows you to promote Engines to
+<li><p class="first">The new <tt class="xref py py-func docutils literal"><span class="pre">IPython.parallel.bind_kernel()</span></tt> allows you to promote Engines to
 listening Kernels, and connect QtConsoles to an Engine and debug it
 directly.</p>
 </li>
@@ -557,8 +557,8 @@ deprecated. As described in <a class="reference external" href="https://github.c
 migrating to this variable is not worth the aesthetic improvement. Please use
 the historical <span class="target" id="index-1"></span><a class="reference internal" href="../config/intro.html#envvar-IPYTHONDIR"><tt class="xref std std-envvar docutils literal"><span class="pre">IPYTHONDIR</span></tt></a> environment variable instead.</li>
 <li>The default value of <em>interactivity</em> passed from
-<a class="reference internal" href="../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell.run_cell" title="IPython.core.interactiveshell.InteractiveShell.run_cell"><tt class="xref py py-meth docutils literal"><span class="pre">run_cell()</span></tt></a> to
-<a class="reference internal" href="../api/generated/IPython.core.interactiveshell.html#IPython.core.interactiveshell.InteractiveShell.run_ast_nodes" title="IPython.core.interactiveshell.InteractiveShell.run_ast_nodes"><tt class="xref py py-meth docutils literal"><span class="pre">run_ast_nodes()</span></tt></a>
+<tt class="xref py py-meth docutils literal"><span class="pre">run_cell()</span></tt> to
+<tt class="xref py py-meth docutils literal"><span class="pre">run_ast_nodes()</span></tt>
 is now configurable.</li>
 <li>New <tt class="docutils literal"><span class="pre">%alias_magic</span></tt> function to conveniently create aliases of existing
 magics, if you prefer to have shorter names for personal use.</li>
@@ -632,7 +632,7 @@ and more robust implementation of deepreload in general. <a class="reference ext
 <div class="section" id="backwards-incompatible-changes">
 <h3>Backwards incompatible changes<a class="headerlink" href="#backwards-incompatible-changes" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>The exception <a class="reference internal" href="../api/generated/IPython.core.error.html#IPython.core.error.TryNext" title="IPython.core.error.TryNext"><tt class="xref py py-exc docutils literal"><span class="pre">IPython.core.error.TryNext</span></tt></a> previously accepted
+<li>The exception <tt class="xref py py-exc docutils literal"><span class="pre">IPython.core.error.TryNext</span></tt> previously accepted
 arguments and keyword arguments to be passed to the next implementation
 of the hook. This feature was removed as it made error message propagation
 difficult and violated the principle of loose coupling.</li>
@@ -671,7 +671,7 @@ difficult and violated the principle of loose coupling.</li>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

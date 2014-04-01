@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Running a notebook server &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>Running a notebook server &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="The IPython notebook" href="index.html" />
     <link rel="next" title="Security in IPython notebooks" href="security.html" />
     <link rel="prev" title="Converting notebooks to other formats" href="nbconvert.html" /> 
@@ -123,7 +123,7 @@ a public interface</em></a>.</p>
 <span id="notebook-security"></span><h2>Securing a notebook server<a class="headerlink" href="#securing-a-notebook-server" title="Permalink to this headline">¶</a></h2>
 <p>You can protect your notebook server with a simple single password by
 setting the <tt class="xref py py-attr docutils literal"><span class="pre">NotebookApp.password</span></tt> configurable. You can prepare a
-hashed password using the function <a class="reference internal" href="../api/generated/IPython.lib.security.html#IPython.lib.security.passwd" title="IPython.lib.security.passwd"><tt class="xref py py-func docutils literal"><span class="pre">IPython.lib.security.passwd()</span></tt></a>:</p>
+hashed password using the function <tt class="xref py py-func docutils literal"><span class="pre">IPython.lib.security.passwd()</span></tt>:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">IPython.lib</span> <span class="kn">import</span> <span class="n">passwd</span>
 <span class="gp">In [2]: </span><span class="n">passwd</span><span class="p">()</span>
 <span class="go">Enter password:</span>
@@ -133,7 +133,7 @@ hashed password using the function <a class="reference internal" href="../api/ge
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last"><a class="reference internal" href="../api/generated/IPython.lib.security.html#IPython.lib.security.passwd" title="IPython.lib.security.passwd"><tt class="xref py py-func docutils literal"><span class="pre">passwd()</span></tt></a> can also take the password as a string
+<p class="last"><tt class="xref py py-func docutils literal"><span class="pre">passwd()</span></tt> can also take the password as a string
 argument. <strong>Do not</strong> pass it as an argument inside an IPython session, as it
 will be saved in your input history.</p>
 </div>
@@ -271,7 +271,7 @@ to the &#8216;No proxy for&#8217; field.</p>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>

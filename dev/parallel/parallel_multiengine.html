@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>IPython’s Direct interface &mdash; IPython 2.0.0-dev: Work in Progress documentation</title>
+    <title>IPython’s Direct interface &mdash; IPython 2.0.0-dev documentation</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -14,7 +14,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '2.0.0-dev: Work in Progress',
+        VERSION:     '2.0.0-dev',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -23,7 +23,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <link rel="top" title="IPython 2.0.0-dev: Work in Progress documentation" href="../index.html" />
+    <link rel="top" title="IPython 2.0.0-dev documentation" href="../index.html" />
     <link rel="up" title="Using IPython for parallel computing" href="index.html" />
     <link rel="next" title="Parallel Magic Commands" href="magics.html" />
     <link rel="prev" title="Starting the IPython controller and engines" href="parallel_process.html" /> 
@@ -153,8 +153,8 @@ our <a class="reference internal" href="parallel_intro.html#parallel-overview"><
 </div>
 <div class="section" id="creating-a-directview-instance">
 <h2>Creating a <tt class="docutils literal"><span class="pre">DirectView</span></tt> instance<a class="headerlink" href="#creating-a-directview-instance" title="Permalink to this headline">¶</a></h2>
-<p>The first step is to import the IPython <a class="reference internal" href="../api/generated/IPython.parallel.html#module-IPython.parallel" title="IPython.parallel"><tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt></a>
-module and then create a <a class="reference internal" href="../api/generated/IPython.parallel.client.client.html#IPython.parallel.client.client.Client" title="IPython.parallel.client.client.Client"><tt class="xref py py-class docutils literal"><span class="pre">Client</span></tt></a> instance:</p>
+<p>The first step is to import the IPython <tt class="xref py py-mod docutils literal"><span class="pre">IPython.parallel</span></tt>
+module and then create a <tt class="xref py py-class docutils literal"><span class="pre">Client</span></tt> instance:</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [1]: </span><span class="kn">from</span> <span class="nn">IPython.parallel</span> <span class="kn">import</span> <span class="n">Client</span>
 
 <span class="gp">In [2]: </span><span class="n">rc</span> <span class="o">=</span> <span class="n">Client</span><span class="p">()</span>
@@ -296,7 +296,7 @@ parallel functions do have a map method.</p>
 </div>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">See the <a class="reference internal" href="../api/generated/IPython.parallel.client.remotefunction.html#IPython.parallel.client.remotefunction.parallel" title="IPython.parallel.client.remotefunction.parallel"><tt class="xref py py-func docutils literal"><span class="pre">parallel()</span></tt></a> and <a class="reference internal" href="../api/generated/IPython.parallel.client.remotefunction.html#IPython.parallel.client.remotefunction.remote" title="IPython.parallel.client.remotefunction.remote"><tt class="xref py py-func docutils literal"><span class="pre">remote()</span></tt></a>
+<p class="last">See the <tt class="xref py py-func docutils literal"><span class="pre">parallel()</span></tt> and <tt class="xref py py-func docutils literal"><span class="pre">remote()</span></tt>
 decorators for options.</p>
 </div>
 </div>
@@ -307,7 +307,7 @@ decorators for options.</p>
 execute Python code or call Python functions. Executing Python code can be
 done in blocking or non-blocking mode (non-blocking is default) using the
 <tt class="xref py py-meth docutils literal"><span class="pre">View.execute()</span></tt> method, and calling functions can be done via the
-<a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.View.apply" title="IPython.parallel.client.view.View.apply"><tt class="xref py py-meth docutils literal"><span class="pre">View.apply()</span></tt></a> method.</p>
+<tt class="xref py py-meth docutils literal"><span class="pre">View.apply()</span></tt> method.</p>
 <div class="section" id="apply">
 <h3>apply<a class="headerlink" href="#apply" title="Permalink to this headline">¶</a></h3>
 <p>The main method for doing remote execution (in fact, all methods that
@@ -331,7 +331,7 @@ without corrupting the message.</dd>
 <dt>dv.targets <span class="classifier-delimiter">:</span> <span class="classifier">int, list of ints</span></dt>
 <dd>which targets this view is associated with.</dd>
 </dl>
-<p>Creating a view is simple: index-access on a client creates a <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.DirectView" title="IPython.parallel.client.view.DirectView"><tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt></a>.</p>
+<p>Creating a view is simple: index-access on a client creates a <tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt>.</p>
 <div class="highlight-ipython"><div class="highlight"><pre><span class="gp">In [4]: </span><span class="n">view</span> <span class="o">=</span> <span class="n">rc</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
 <span class="gh">Out[4]: </span><span class="go">&lt;DirectView [1, 2]&gt;</span>
 
@@ -343,7 +343,7 @@ without corrupting the message.</dd>
 </div>
 <div class="section" id="blocking-execution">
 <h3>Blocking execution<a class="headerlink" href="#blocking-execution" title="Permalink to this headline">¶</a></h3>
-<p>In blocking mode, the <a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.DirectView" title="IPython.parallel.client.view.DirectView"><tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt></a> object (called <tt class="docutils literal"><span class="pre">dview</span></tt> in
+<p>In blocking mode, the <tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt> object (called <tt class="docutils literal"><span class="pre">dview</span></tt> in
 these examples) submits the command to the controller, which places the
 command in the engines&#8217; queues for execution. The <tt class="xref py py-meth docutils literal"><span class="pre">apply()</span></tt> call then
 blocks until the engines are done executing the command:</p>
@@ -482,7 +482,7 @@ the duration of a single call.</li>
 </pre></div>
 </div>
 <p>The <tt class="xref py py-attr docutils literal"><span class="pre">block</span></tt> and <tt class="xref py py-attr docutils literal"><span class="pre">targets</span></tt> instance attributes of the
-<a class="reference internal" href="../api/generated/IPython.parallel.client.view.html#IPython.parallel.client.view.DirectView" title="IPython.parallel.client.view.DirectView"><tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt></a> also determine the behavior of the parallel magic commands.</p>
+<tt class="xref py py-class docutils literal"><span class="pre">DirectView</span></tt> also determine the behavior of the parallel magic commands.</p>
 <div class="admonition seealso">
 <p class="first admonition-title">See also</p>
 <p class="last">See the documentation of the <a class="reference internal" href="magics.html#parallel-magics"><em>Parallel Magics</em></a>.</p>
@@ -795,7 +795,7 @@ You can change this limit to suit your needs with:</p>
     </div>
     <div class="footer">
         &copy; Copyright 2008, The IPython Development Team.
-      Last updated on Mar 25, 2014.
+      Last updated on Apr 01, 2014.
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
     </div>
   </body>
